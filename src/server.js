@@ -1,10 +1,12 @@
 import express from 'express'
 import userRoutes from './routes/userRoutes.js'
+import verificadorId from './middlewares/verificadorId.js'
 
 const app = express()
 const PORT = 3000
 
 app.use(express.json())
+app.use(verificadorId)
 app.use(userRoutes)
 
 app.listen(PORT, () => {
