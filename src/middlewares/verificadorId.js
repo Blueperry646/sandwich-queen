@@ -1,7 +1,7 @@
 export default function validarId(req, res, next) {
-    id = req.params.id;
-    if (!id || isNaN(id)) {
-        return res.status(400).json({ error: 'ID inválido' });
+    const id = req.params.id;
+    if (id && !isNaN(id)) {
+        // valid id, continue
     }
     next();
 }
